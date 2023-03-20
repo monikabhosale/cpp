@@ -1,0 +1,490 @@
+//Passing One-dimensional Array to a Function
+
+#include <iostream>
+using namespace std;
+
+// declare function to display marks
+// take a 1d array as parameter
+void display(int m[5]) {
+    cout << "Displaying marks: " << endl;
+
+    // display array elements    
+    for (int i = 0; i < 5; ++i) {
+        cout << "Student " << i + 1 << ": " << m[i] << endl;
+    }
+}
+
+int main() {
+
+    // declare and initialize an array
+    int marks[5] = {8, 06, 10, 98, 67};
+    
+    // call display function
+    // pass array as argument
+    display(marks);
+
+    return 0;
+}
+
+o/p:
+Displaying marks: 
+Student 1: 8
+Student 2: 6
+Student 3: 10
+Student 4: 98
+Student 5: 67
+
+//Find Transpose of a Matrix
+#include <iostream>
+using namespace std;
+
+int main() {
+   int a[10][10], transpose[10][10], row, column, i, j;
+
+   cout << "Enter rows and columns of matrix: ";
+   cin >> row >> column;
+
+   cout << "\nEnter elements of matrix: " << endl;
+
+   // Storing matrix elements
+   for (int i = 0; i < row; ++i) {
+      for (int j = 0; j < column; ++j) {
+         cout << "Enter element a" << i + 1 << j + 1 << ": ";
+         cin >> a[i][j];
+      }
+   }
+
+   // Printing the a matrix
+   cout << "\nEntered Matrix: " << endl;
+   for (int i = 0; i < row; ++i) {
+      for (int j = 0; j < column; ++j) {
+         cout << " " << a[i][j];
+         if (j == column - 1)
+            cout << endl << endl;
+      }
+   }
+
+   // Computing transpose of the matrix
+   for (int i = 0; i < row; ++i)
+      for (int j = 0; j < column; ++j) {
+         transpose[j][i] = a[i][j];
+      }
+
+   // Printing the transpose
+   cout << "\nTranspose of Matrix: " << endl;
+   for (int i = 0; i < column; ++i)
+      for (int j = 0; j < row; ++j) {
+         cout << " " << transpose[i][j];
+         if (j == row - 1)
+            cout << endl << endl;
+      }
+
+   return 0;
+}
+o/p:
+Enter rows and columns of matrix: 2
+3
+
+Enter elements of matrix:
+Enter element a11: 1
+Enter element a12: 2
+Enter element a13: 9
+Enter element a21: 0
+Enter element a22: 4
+Enter element a23: 7
+
+Entered Matrix:
+1  2  9
+
+0  4  7
+
+
+Transpose of Matrix:
+1  0
+
+2  4
+
+9  7
+//Passing Multidimensional Array to a Function
+#include <iostream>
+using namespace std;
+
+// define a function 
+// pass a 2d array as a parameter
+void display(int n[][2]) {
+    cout << "Displaying Values: " << endl;
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 2; ++j) {
+            cout << "num[" << i << "][" << j << "]: " << n[i][j] << endl;
+        }
+    }
+}
+
+int main() {
+
+    // initialize 2d array
+    int num[3][2] = {
+        {3, 4},
+        {9, 5},
+        {7, 1}
+    };
+
+    // call the function
+    // pass a 2d array as an argument
+    display(num);
+
+    return 0;
+}
+
+o/p:
+Displaying Values: 
+num[0][0]: 3
+num[0][1]: 4
+num[1][0]: 9
+num[1][1]: 5
+num[2][0]: 7
+num[2][1]: 1
+
+//Add Two Matrices using Multi-dimensional Arrays
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int r, c, a[100][100], b[100][100], sum[100][100], i, j;
+
+    cout << "Enter number of rows (between 1 and 100): ";
+    cin >> r;
+
+    cout << "Enter number of columns (between 1 and 100): ";
+    cin >> c;
+
+    cout << endl << "Enter elements of 1st matrix: " << endl;
+
+    // Storing elements of first matrix entered by user.
+    for(i = 0; i < r; ++i)
+       for(j = 0; j < c; ++j)
+       {
+           cout << "Enter element a" << i + 1 << j + 1 << " : ";
+           cin >> a[i][j];
+       }
+
+    // Storing elements of second matrix entered by user.
+    cout << endl << "Enter elements of 2nd matrix: " << endl;
+    for(i = 0; i < r; ++i)
+       for(j = 0; j < c; ++j)
+       {
+           cout << "Enter element b" << i + 1 << j + 1 << " : ";
+           cin >> b[i][j];
+       }
+
+    // Adding Two matrices
+    for(i = 0; i < r; ++i)
+        for(j = 0; j < c; ++j)
+            sum[i][j] = a[i][j] + b[i][j];
+
+    // Displaying the resultant sum matrix.
+    cout << endl << "Sum of two matrix is: " << endl;
+    for(i = 0; i < r; ++i)
+        for(j = 0; j < c; ++j)
+        {
+            cout << sum[i][j] << "  ";
+            if(j == c - 1)
+                cout << endl;
+        }
+
+    return 0;
+}
+o/p:
+Enter number of rows (between 1 and 100): 2
+Enter number of columns (between 1 and 100): 2
+Enter elements of 1st matrix: 
+Enter element a11 : 33
+Enter element a12 : 33
+Enter element a21 : 33
+Enter element a22 : 33
+Enter elements of 2nd matrix: 
+Enter element b11 : 22
+Enter element b12 : 22
+Enter element b21 : 22
+Enter element b22 : 22
+Sum of two matrix is: 
+55  55  
+55  55  
+
+//Multiply two matrices without using functions
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a[10][10], b[10][10], mult[10][10], r1, c1, r2, c2, i, j, k;
+
+    cout << "Enter rows and columns for first matrix: ";
+    cin >> r1 >> c1;
+    cout << "Enter rows and columns for second matrix: ";
+    cin >> r2 >> c2;
+
+    // If column of first matrix in not equal to row of second matrix,
+    // ask the user to enter the size of matrix again.
+    while (c1!=r2)
+    {
+        cout << "Error! column of first matrix not equal to row of second.";
+
+        cout << "Enter rows and columns for first matrix: ";
+        cin >> r1 >> c1;
+
+        cout << "Enter rows and columns for second matrix: ";
+        cin >> r2 >> c2;
+    }
+
+    // Storing elements of first matrix.
+    cout << endl << "Enter elements of matrix 1:" << endl;
+    for(i = 0; i < r1; ++i)
+        for(j = 0; j < c1; ++j)
+        {
+            cout << "Enter element a" << i + 1 << j + 1 << " : ";
+            cin >> a[i][j];
+        }
+
+    // Storing elements of second matrix.
+    cout << endl << "Enter elements of matrix 2:" << endl;
+    for(i = 0; i < r2; ++i)
+        for(j = 0; j < c2; ++j)
+        {
+            cout << "Enter element b" << i + 1 << j + 1 << " : ";
+            cin >> b[i][j];
+        }
+
+    // Initializing elements of matrix mult to 0.
+    for(i = 0; i < r1; ++i)
+        for(j = 0; j < c2; ++j)
+        {
+            mult[i][j]=0;
+        }
+
+    // Multiplying matrix a and b and storing in array mult.
+    for(i = 0; i < r1; ++i)
+        for(j = 0; j < c2; ++j)
+            for(k = 0; k < c1; ++k)
+            {
+                mult[i][j] += a[i][k] * b[k][j];
+            }
+
+    // Displaying the multiplication of two matrix.
+    cout << endl << "Output Matrix: " << endl;
+    for(i = 0; i < r1; ++i)
+    for(j = 0; j < c2; ++j)
+    {
+        cout << " " << mult[i][j];
+        if(j == c2-1)
+            cout << endl;
+    }
+
+    return 0;
+}
+
+o/p:
+Enter rows and column for first matrix: 3
+2
+Enter rows and column for second matrix: 3
+2
+Error! column of first matrix not equal to row of second.
+
+Enter rows and column for first matrix: 2
+3
+Enter rows and column for second matrix: 3
+2
+
+Enter elements of matrix 1:
+Enter elements a11: 3
+Enter elements a12: -2
+Enter elements a13: 5
+Enter elements a21: 3
+Enter elements a22: 0
+Enter elements a23: 4
+
+Enter elements of matrix 2:
+Enter elements b11: 2
+Enter elements b12: 3
+Enter elements b21: -9
+Enter elements b22: 0
+Enter elements b31: 0
+Enter elements b32: 4
+
+Output Matrix:
+24 29
+6  25
+
+//Multiply Matrix by Passing it to a Function
+
+#include <iostream>
+using namespace std;
+
+void enterData(int firstMatrix[][10], int secondMatrix[][10], int rowFirst, int columnFirst, int rowSecond, int columnSecond);
+void multiplyMatrices(int firstMatrix[][10], int secondMatrix[][10], int multResult[][10], int rowFirst, int columnFirst, int rowSecond, int columnSecond);
+void display(int mult[][10], int rowFirst, int columnSecond);
+
+int main()
+{
+	int firstMatrix[10][10], secondMatrix[10][10], mult[10][10], rowFirst, columnFirst, rowSecond, columnSecond, i, j, k;
+
+	cout << "Enter rows and column for first matrix: ";
+	cin >> rowFirst >> columnFirst;
+
+	cout << "Enter rows and column for second matrix: ";
+	cin >> rowSecond >> columnSecond;
+
+	// If colum of first matrix in not equal to row of second matrix, asking user to enter the size of matrix again.
+	while (columnFirst != rowSecond)
+	{
+		cout << "Error! column of first matrix not equal to row of second." << endl;
+		cout << "Enter rows and column for first matrix: ";
+		cin >> rowFirst >> columnFirst;
+		cout << "Enter rows and column for second matrix: ";
+		cin >> rowSecond >> columnSecond;
+	}
+
+	// Function to take matrices data
+        enterData(firstMatrix, secondMatrix, rowFirst, columnFirst, rowSecond, columnSecond);
+
+        // Function to multiply two matrices.
+        multiplyMatrices(firstMatrix, secondMatrix, mult, rowFirst, columnFirst, rowSecond, columnSecond);
+
+        // Function to display resultant matrix after multiplication.
+        display(mult, rowFirst, columnSecond);
+
+	return 0;
+}
+
+void enterData(int firstMatrix[][10], int secondMatrix[][10], int rowFirst, int columnFirst, int rowSecond, int columnSecond)
+{
+	int i, j;
+	cout << endl << "Enter elements of matrix 1:" << endl;
+	for(i = 0; i < rowFirst; ++i)
+	{
+		for(j = 0; j < columnFirst; ++j)
+		{
+			cout << "Enter elements a"<< i + 1 << j + 1 << ": ";
+			cin >> firstMatrix[i][j];
+		}
+	}
+
+	cout << endl << "Enter elements of matrix 2:" << endl;
+	for(i = 0; i < rowSecond; ++i)
+	{
+		for(j = 0; j < columnSecond; ++j)
+		{
+			cout << "Enter elements b" << i + 1 << j + 1 << ": ";
+			cin >> secondMatrix[i][j];
+		}
+	}
+}
+
+void multiplyMatrices(int firstMatrix[][10], int secondMatrix[][10], int mult[][10], int rowFirst, int columnFirst, int rowSecond, int columnSecond)
+{
+	int i, j, k;
+
+	// Initializing elements of matrix mult to 0.
+	for(i = 0; i < rowFirst; ++i)
+	{
+		for(j = 0; j < columnSecond; ++j)
+		{
+			mult[i][j] = 0;
+		}
+	}
+
+	// Multiplying matrix firstMatrix and secondMatrix and storing in array mult.
+	for(i = 0; i < rowFirst; ++i)
+	{
+		for(j = 0; j < columnSecond; ++j)
+		{
+			for(k=0; k<columnFirst; ++k)
+			{
+				mult[i][j] += firstMatrix[i][k] * secondMatrix[k][j];
+			}
+		}
+	}
+}
+
+void display(int mult[][10], int rowFirst, int columnSecond)
+{
+	int i, j;
+
+	cout << "Output Matrix:" << endl;
+	for(i = 0; i < rowFirst; ++i)
+	{
+		for(j = 0; j < columnSecond; ++j)
+		{
+			cout << mult[i][j] << " ";
+			if(j == columnSecond - 1)
+				cout << endl << endl;
+		}
+	}
+}
+o/p:
+Enter rows and column for first matrix: 3
+2
+Enter rows and column for second matrix: 3
+2
+Error! column of first matrix not equal to row of second.
+
+Enter rows and column for first matrix: 2
+3
+Enter rows and column for second matrix: 3
+2
+
+Enter elements of matrix 1:
+Enter elements a11: 3
+Enter elements a12: -2
+Enter elements a13: 5
+Enter elements a21: 3
+Enter elements a22: 0
+Enter elements a23: 4
+
+Enter elements of matrix 2:
+Enter elements b11: 2
+Enter elements b12: 3
+Enter elements b21: -9
+Enter elements b22: 0
+Enter elements b31: 0
+Enter elements b32: 4
+
+Output Matrix:
+24 29
+
+6  25
+
+//Access Array Elements Using Pointer
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   int data[5];
+   cout << "Enter elements: ";
+
+   for(int i = 0; i < 5; ++i)
+      cin >> data[i];
+
+   cout << "You entered: ";
+   for(int i = 0; i < 5; ++i)
+      cout << endl << *(data + i);
+
+   return 0;
+}
+
+o/p:
+Enter elements: 1
+2
+3
+5
+4
+You entered: 1
+2
+3
+5
+4
