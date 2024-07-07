@@ -1,0 +1,60 @@
+Time Complexity: O(1)
+Auxiliary Space: O(1)
+
+In the above program, the insertion operator(<<) inserts the value of the string variable sample followed by the string “A computer science portal for geeks” in
+the standard output stream cout which is then displayed on the screen.
+
+standard input stream (cin): Usually the input device in a computer is the keyboard. C++ cin statement is the instance of the class istream and is used to read input from
+the standard input device which is usually a keyboard. 
+The extraction operator(>>) is used along with the object cin for reading inputs. The extraction operator extracts the data from the object cin
+which is entered using the keyboard.
+Time Complexity: O(1)
+Auxiliary Space: O(1)
+
+The above program asks the user to input the age. The object cin is connected to the input device. 
+The age entered by the user is extracted from cin using the extraction operator(>>) and 
+the extracted data is then stored in the variable age present on the right side of the extraction operator.
+
+Un-buffered standard error stream (cerr): The C++ cerr is the standard error stream that is used to output the errors.
+This is also an instance of the iostream class. As cerr in C++ is un-buffered so it is used when one needs to display the error message immediately. 
+It does not have any buffer to store the error message and display it later.
+The main difference between cerr and cout comes when you would like to redirect output using “cout” that gets redirected 
+to file if you use “cerr” the error doesn’t get stored in file.(This is what un-buffered means ..It cant store the message)
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	cerr << "An error occurred";
+	return 0;
+}
+Output: 
+
+An error occurred
+********************************************************************************************************************************
+
+Time Complexity: O(1)
+Auxiliary Space: O(1)
+
+buffered standard error stream (clog): This is also an instance of ostream class and used to display errors but unlike cerr 
+the error is first inserted into a buffer and is stored in the buffer until it is not fully filled. or the buffer is not explicitly flushed (using flush()). 
+The error message will be displayed on the screen too.
+
+#include <iostream>
+ 
+using namespace std;
+ 
+int main()
+{
+    clog << "An error occurred";
+ 
+    return 0;
+}
+Output: 
+
+An error occurred
+***********************************************************************************
+Time Complexity: O(1)
+Auxiliary Space: O(1)
