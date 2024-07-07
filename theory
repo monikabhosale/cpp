@@ -1,0 +1,123 @@
+Writing First C++ Program – Hello World Example
+
+
+// C++ program to display "Hello World"
+ 
+// Header file for input output functions
+#include <iostream>
+using namespace std;
+ 
+// Main() function: where the execution of
+// program begins
+int main()
+{
+    // Prints hello world
+    cout << "Hello World";
+ 
+    return 0;
+}
+********************************************************************************************************
+C++ is a widely used Object Oriented Programming language and is relatively easy to understand. 
+The “Hello World” program is the first step towards learning any programming language and is also one of
+the most straightforward programs you will learn.
+
+The Hello World Program in C++ is the basic program that is used to demonstrate how the coding process works.
+All you have to do is display the message “Hello World” on the console screen.
+*******************************************************************************
+ #include
+This is a preprocessor directive. The #include directive tells the compiler to include the content of a file in the source code.
+
+For example, #include<iostream> tells the compiler to include the standard iostream 
+file which contains declarations of all the standard input/output library functions. Click to Know More on Preprocessors.
+
+3. using namespace std
+This is used to import the entity of the std namespace into the current namespace of the program.
+The statement using namespace std is generally considered a bad practice.
+ When we import a namespace we are essentially pulling all type definitions into the current scope.
+
+The std namespace is huge. The alternative to this statement is to specify the namespace to which
+the identifier belongs using the scope operator(::) each time we declare a type. For example, std::cout. 
+Click to know More about using namespace std.
+
+4. int main() { }
+A function is a group of statements that are designed to perform a specific task.
+The main() function is the entry point of every C++ program, no matter where the function is located in the program.
+
+The opening braces ‘{‘ indicates the beginning of the main function and the closing braces ‘}’ indicates
+the ending of the main function. Click to know More about the main() function.
+
+5. cout<<“Hello World”;
+std::cout is an instance of the std::ostream class, that is used to display output on the screen. Everything followed by
+the character << in double quotes ” ” is displayed on the output device. The semi-colon character at the end of
+the statement is used to indicate that the statement is ending there. Click to know More on Input/Output.
+
+7. return 0
+This statement is used to return a value from a function and indicates the finishing of a function.
+ This statement is basically used in functions to return the results of the operations performed by a function.
+
+9. Indentation
+As you can see the cout and the return statement have been indented or moved to the right side.
+ This is done to make the code more readable. We must always use indentations and comments to make the code more readable.
+Must read the FAQ on the style of writing programs.
+
+Important Points
+Always include the necessary header files for the smooth execution of functions. 
+For example, <iostream> must be included to use std::cin and std::cout.
+The execution of code begins from the main() function.
+It is a good practice to use Indentation and comments in programs for easy understanding.
+cout is used to print statements and cin is used to take inputs.
+
+
+Summer-time is here and so is the time to skill-up! More than 5,000 learners have now completed their journey 
+from basics of DSA to advanced level development programs such as Full-Stack, Backend Development, Data Science. 
+
+And why go anywhere else when our DSA to Development: Coding Guide will help you master all this in a few months!
+Apply now to our DSA to Development Program and our counsellors will connect with you for further guidance & support.
+
+
+To write and run C++ programs, you need to set up the local environment on your computer. Refer to the complete article Setting up C++ Development Environment.
+If you do not want to set up the local environment on your computer, 
+you can also use online IDE to write and run your C++ programs.
+
+************************************************************************************************************
+
+C++ comes with libraries that provide us with many ways for performing input and output. In C++ input and output are performed in the form of a sequence of bytes or more commonly known as streams.
+
+Input Stream: If the direction of flow of bytes is from the device(for example, Keyboard) to the main memory then this process is called input.
+Output Stream: If the direction of flow of bytes is opposite, i.e. from main memory to device( display screen ) then this process is called output.
+Basic Input / Output in C++
+
+Header files available in C++ for Input/Output operations are: 
+
+iostream: iostream stands for standard input-output stream. This header file contains definitions of objects like cin, cout, cerr, etc.
+iomanip: iomanip stands for input-output manipulators. The methods declared in these files are used for manipulating streams. This file contains definitions of setw, setprecision, etc.
+fstream: This header file mainly describes the file stream. This header file is used to handle the data being read from a file as input or data being written into the file as output.
+bits/stdc++: This header file includes every standard library. In programming contests, using this file is a good idea, when you want to reduce the time wasted in doing chores;
+especially when your rank is time sensitive. To know more about this header file refer this article.
+In C++ after the header files, we often use ‘using namespace std;‘. The reason behind it is that all of the standard library definitions are inside the namespace std.
+As the library functions are not defined at global scope, so in order to use them we use namespace std. So, that we don’t need to write STD:: at every line (eg. STD::cout etc.). To know more refer this article.
+
+The two instances cout in C++ and cin in C++ of iostream class are used very often for printing outputs and taking inputs respectively. 
+These two are the most basic methods of taking input and printing output in C++. To use cin and cout in C++ one must include the header file iostream in the program.
+
+This article mainly discusses the objects defined in the header file iostream like the cin and cout.  
+
+Standard output stream (cout): Usually the standard output device is the display screen. The C++ cout statement is the instance of the ostream class. 
+It is used to produce output on the standard output device which is usually the display screen. The data needed to be displayed on the screen is inserted in 
+the standard output stream (cout) using the insertion operator(<<).
+***************************************************************************************************************
+
+#include <iostream>
+ 
+using namespace std;
+ 
+int main()
+{
+    char sample[] = "GeeksforGeeks";
+ 
+    cout << sample << " - A computer science portal for geeks";
+ 
+    return 0;
+}
+
+***************************************************************************************************************
